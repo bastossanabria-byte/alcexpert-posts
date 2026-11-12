@@ -1,0 +1,132 @@
+<title>Manual Arquétipo Alce</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: faixas de largura total alternando verde-floresta, creme e terracota; coluna de leitura única com título em serifa e destaque em marca-texto, igual aos posts da semana 2. */
+:root{--forest:#0F2A24;--cream:#F4ECDC;--ink:#15130F;--terra:#D8431A;--gold:#F2B544;--mute:#6b6254;--display:'Lora',Georgia,serif;--body:'Poppins',system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.6;font-size:17px}
+.band{padding-block:72px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.in{max-width:760px;margin:0 auto}
+.dark{background:var(--forest);color:var(--cream)}
+.terra{background:var(--terra);color:var(--cream)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(40px,8vw,72px)}
+h2{font-size:clamp(30px,5.4vw,46px);margin-bottom:22px}
+h3{font-size:22px;letter-spacing:-.01em}
+mark{background:var(--terra);color:var(--cream);padding:0 .14em;font-style:italic;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.dark mark{background:var(--gold);color:var(--forest)}
+.terra mark{background:var(--ink);color:var(--cream)}
+.brand{display:flex;align-items:center;gap:14px;font-weight:700;letter-spacing:.35em;font-size:13px;margin-bottom:56px}
+.brand img{height:46px}
+.lead{font-size:20px;opacity:.92;margin:26px 0 34px;max-width:620px}
+.btn{display:inline-block;background:var(--gold);color:var(--forest);font-weight:700;letter-spacing:.06em;text-decoration:none;padding:18px 34px;border-radius:60px;font-size:16px;text-transform:uppercase}
+.btn:hover{background:#ffc766}.btn:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+.btn.dk{background:var(--ink);color:var(--cream)}.btn.dk:hover{background:#2a2620}
+.small{font-size:14px;opacity:.75;margin-top:16px}
+.eyebrow{font-weight:600;letter-spacing:.22em;font-size:13px;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.dark .eyebrow{color:var(--gold)}
+p{margin:0 0 18px}
+.sinais{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+.sinais li{padding:16px 20px;border-left:6px solid var(--terra);background:rgba(21,19,15,.05);font-weight:500}
+.temas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:30px}
+.tema{border:2px solid rgba(244,236,220,.25);border-radius:6px;padding:18px 20px;min-width:0}
+.tema b{display:block;font-family:var(--display);font-size:20px;margin-bottom:4px}
+.tema span{font-size:15px;opacity:.8}
+.stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:34px}
+.stats div{min-width:0}.stats strong{display:block;font-family:var(--display);font-size:52px;line-height:1}
+.stats span{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.price{border:3px solid var(--cream);border-radius:8px;padding:30px;margin:30px 0 26px}
+.price .v{font-family:var(--display);font-size:clamp(40px,8vw,60px);font-weight:700;line-height:1}
+details{border-bottom:2px solid rgba(21,19,15,.15);padding:18px 0}
+summary{cursor:pointer;font-weight:600;font-size:18px}
+summary:focus-visible{outline:3px solid var(--terra);outline-offset:4px}
+details p{margin:12px 0 0}
+footer{padding-block:34px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));background:var(--ink);color:var(--cream);font-size:14px}
+footer .in{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer a{color:var(--gold)}
+.note{background:var(--gold);color:var(--forest);padding:10px 14px;border-radius:6px;font-size:14px;font-weight:600;margin-top:18px}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s,background .15s}.btn:hover{transform:translateY(-2px)}}
+</style>
+
+<section class="band dark"><div class="in">
+ <div class="brand"><img src="data:image/png;base64,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" alt="">CLÃ ALCE</div>
+ <h1>Pare de andar em <mark>círculos</mark>.</h1>
+ <p class="lead">O Manual Arquétipo Alce é um guia de 69 páginas sobre dinheiro, performance e poderes espirituais, escrito a partir do arquétipo do alce.</p>
+ <a class="btn buy" href="#comprar">Quero o manual</a>
+ <p class="small">Material digital. @alcexpert</p>
+</div></section>
+
+<section class="band"><div class="in">
+ <div class="eyebrow">Você se reconhece?</div>
+ <h2>Quando falta rumo, a energia vai para <mark>tudo</mark> e não chega em nada.</h2>
+ <ul class="sinais">
+  <li>Você abre o celular antes de decidir o que fazer com o dia.</li>
+  <li>Diz “depois eu começo” toda semana.</li>
+  <li>Reage ao que acontece em vez de escolher o que faz.</li>
+  <li>Sente que precisa de um mapa, não de mais motivação.</li>
+ </ul>
+ <p style="margin-top:28px">Motivação passa. Rotina e direção ficam. O manual organiza as duas em linguagem simples, pelo arquétipo do alce.</p>
+</div></section>
+
+<section class="band dark"><div class="in">
+ <div class="eyebrow">O que você encontra</div>
+ <h2>Um mapa em <mark>onze capítulos</mark>.</h2>
+ <div class="temas">
+  <div class="tema"><b>Introdução</b><span>Por que o alce e como usar o manual.</span></div>
+  <div class="tema"><b>O que são arquétipos</b><span>A base para entender o alce como símbolo.</span></div>
+  <div class="tema"><b>Características do alce</b><span>Postura, força calma e presença.</span></div>
+  <div class="tema"><b>Fé</b><span>Confiança em si e constância no deserto.</span></div>
+  <div class="tema"><b>Libido</b><span>Energia vital e como direcioná-la.</span></div>
+  <div class="tema"><b>Relacionamentos</b><span>Com quem caminhar e como.</span></div>
+  <div class="tema"><b>Poderes ocultos</b><span>O lado espiritual do arquétipo.</span></div>
+  <div class="tema"><b>Longevidade</b><span>Cuidar da energia para ir longe.</span></div>
+  <div class="tema"><b>Vitalidade</b><span>Corpo e disposição no dia a dia.</span></div>
+  <div class="tema"><b>Trabalho duro</b><span>Constância no lugar de impulso.</span></div>
+  <div class="tema"><b>Lembretes</b><span>Resumo para reler sempre.</span></div>
+ </div>
+ <div class="stats">
+  <div><strong>69</strong><span>páginas</span></div>
+  <div><strong>11</strong><span>capítulos</span></div>
+  <div><strong>Ebook</strong><span>leitura no celular</span></div>
+ </div>
+</div></section>
+
+<section class="band"><div class="in">
+ <div class="eyebrow">Quem escreve</div>
+ <h2>Ricardo Rodrigues e o <mark>Clã Alce</mark>.</h2>
+ <p>O manual é de autoria de Ricardo Rodrigues, criador da comunidade @alcexpert, e parte da simbologia do alce para falar de dinheiro, performance, fé, relações e propósito. O autor conta a própria experiência com o arquétipo, inclusive ganhos financeiros e pessoais. Isso é relato pessoal, não promessa: os resultados variam de pessoa para pessoa. O manual não substitui orientação médica, psicológica, espiritual ou financeira.</p>
+</div></section>
+
+<section class="band terra" id="comprar"><div class="in">
+ <div class="eyebrow" style="color:var(--cream)">Acesso ao manual</div>
+ <h2>Comece a ler <mark>hoje</mark>.</h2>
+ <div class="price">
+  <div class="v" style="font-size:clamp(28px,6vw,40px)" id="preco">Valor na página de compra</div>
+  <p class="small" style="margin:10px 0 0;opacity:.9">Compra pela Hotmart, em ambiente seguro da plataforma.</p>
+ </div>
+ <a class="btn dk buy" id="comprar-btn" href="#comprar">Comprar o manual</a>
+ <p class="small" style="opacity:.9">Prefere conhecer antes? Comente <b>ALCE</b> em um post do <a style="color:var(--cream)" href="https://www.instagram.com/alcexpert/">@alcexpert</a> e receba um capítulo no direct.</p>
+ 
+</div></section>
+
+<section class="band"><div class="in">
+ <h2>Perguntas <mark>frequentes</mark></h2>
+ <details><summary>Em que formato recebo o manual?</summary><p>É um ebook com 69 páginas, para ler no celular ou no computador. O acesso é liberado pela Hotmart após a confirmação do pagamento.</p></details>
+ <details><summary>Preciso conhecer arquétipos antes?</summary><p>Não. Há um capítulo próprio, “O que são arquétipos”, que apresenta a base.</p></details>
+ <details><summary>O manual garante resultado financeiro?</summary><p>Não. O autor relata a própria experiência. Resultados dependem da sua prática e do seu contexto e não são garantidos.</p></details>
+ <details><summary>Como falo com o Clã?</summary><p>Pelo direct do <a href="https://www.instagram.com/alcexpert/">@alcexpert</a> no Instagram.</p></details>
+</div></section>
+
+<footer><div class="in"><span>Clã Alce · @alcexpert</span><a href="https://www.instagram.com/alcexpert/">Instagram</a></div></footer>
+
+<script>
+// CONFIGURE AQUI: preço e link do checkout (Hotmart, Kiwify, Stripe etc.)
+var PRECO = "";
+var CHECKOUT_URL = "https://hotmart.com/pt-br/marketplace/produtos/arquetipo-alce-dinheiro-performance-e-segredos-ocultos-espirituais-do-alce/N89488383D";
+(function(){
+  if (PRECO) document.getElementById('preco').textContent = PRECO;
+  if (CHECKOUT_URL) { document.querySelectorAll('.buy').forEach(function(a){ a.href = CHECKOUT_URL; a.target = '_blank'; a.rel = 'noopener'; }); }
+
+})();
+</script>
